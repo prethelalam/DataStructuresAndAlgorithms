@@ -7,6 +7,7 @@ public class QuickSort {
 
     public static void quicksort(int[] arr, int low, int high) 
     {
+        comparisonCounter++;
         if (low < high) 
         {            
             int pi = partition(arr, low, high);
@@ -27,12 +28,11 @@ public class QuickSort {
             if (arr[j] < pivot) 
             {
                 i++;
+                //movement counter variable
+                movementCounter++;
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
-
-                //movement counter variable
-                movementCounter++;
             }
         }
 

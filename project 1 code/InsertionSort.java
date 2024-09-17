@@ -4,14 +4,12 @@ public class InsertionSort {
 
     //create a movement/swapping counter variable to count each time a swap/element moves
     static int movementCounter = 0;
-    
+
     public static void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) 
         {
             int key = arr[i];
             int j = i - 1;
-
-            comparisonCounter++; //for loop counter
 
             while (j >= 0 && arr[j] > key)
             {
@@ -20,11 +18,10 @@ public class InsertionSort {
 
                 comparisonCounter++; //while loop counter
             }
+            arr[j + 1] = key;
 
             //movement counter
             movementCounter++;
-
-            arr[j + 1] = key;
         }        
     }
 }

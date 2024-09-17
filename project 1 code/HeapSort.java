@@ -30,21 +30,27 @@ public class HeapSort {
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (left < n && arr[left] > arr[largest]) 
-        {   
-            //comparison counter variable
-            comparisonCounter++;
-            largest = left;
-        }
-            
-
-        if (right < n && arr[right] > arr[largest]) 
+        if (left < n)
         {
             //comparison counter variable
             comparisonCounter++;
-            largest = right;
+
+            if (arr[left] > arr[largest])
+            {
+                largest = left;
+            }
         }
             
+
+        if (right < n) 
+        {
+            //comparison counter variable
+            comparisonCounter++;
+            if (arr[right] > arr[largest])
+            {
+                largest = right;
+            }
+        }
 
         if (largest != i) 
         {

@@ -7,9 +7,7 @@ public class MergeSort {
 
     public static void mergeSort(int[] arr, int left, int right) 
     { 
-        //create a variable to track the amount of time taken to sort the array
-        long startTime = System.nanoTime();
-
+        comparisonCounter++;
         if (left < right) 
         {
             int mid = (left + right) / 2;
@@ -29,10 +27,18 @@ public class MergeSort {
         int[] R = new int[n2];
 
         for (int i = 0; i < n1; i++) 
+        {
             L[i] = arr[left + i];
+            movementCounter++;
+        }
+            
 
-        for (int j = 0; j < n2; j++) 
+        for (int j = 0; j < n2; j++)
+        {
             R[j] = arr[mid + 1 + j];
+            movementCounter++;
+        }
+            
 
         int i = 0, j = 0;
         int k = left;
@@ -44,11 +50,13 @@ public class MergeSort {
             if (L[i] <= R[j]) 
             {
                 arr[k] = L[i];
+                movementCounter++;
                 i++; 
             } 
             else 
             {
                 arr[k] = R[j];
+                movementCounter++;
                 j++; 
             }
 
